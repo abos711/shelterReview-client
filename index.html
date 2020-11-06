@@ -12,6 +12,50 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Shelter Review</h1>
+      <p id="message"></p>
+            <section>
+              <form id="sign-up-user-form">
+                <fieldset>
+                  <legend>Sign Up</legend>
+                  <label for="sign-up-user"></label>
+                  <input id="sign-up-user" type="email" name="credentials[email]" placeholder="{User Email}">
+                  <label for="sign-up-password"></label>
+                  <input id="sign-up-password" type="password" name="credentials[password]" placeholder="{Password}">
+                  <label for="sign-up-password_confirmation"></label>
+                  <input id="sign-up-password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="{Confirm Password}">
+                  <input type="submit" value="Sign Up">
+                </fieldset>
+              </form>
+              <section>
+              <form id="sign-in-user-form">
+                <fieldset>
+                  <legend>Sign In</legend>
+                  <label for="sign-in-user"></label>
+                  <input id="sign-in-user" type="email" name="credentials[email]" placeholder="{User Email}">
+                  <label for="sign-in-password"></label>
+                  <input id="sign-in-password" type="password" name="credentials[password]" placeholder="{Password}">
+                  <input type="submit" value="Sign In">
+                </fieldset>
+              </form>
+      </section>
+      <br>
+      <section>
+        <form id="change-password-user-form">
+          <fieldset>
+            <legend></legend>
+  <!-- <input id="sign-in-user" type="email" name="credentials[email]" placeholder="Email"> -->
+            <input type="password" name="passwords[old]" placeholder="{Old Password}">
+            <input type="password" name="passwords[new]" placeholder="{New Password}">
+            <input type="submit" value="Change Password">
+          </fieldset>
+        </form>
+      </section>
+      <br>
+      <section>
+          <form id='sign-out-user-form'>
+            <input type='submit' value='Sign out'>
+          </form>
+      </section>
     </body>
 </html>

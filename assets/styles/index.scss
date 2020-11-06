@@ -1,1 +1,54 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  // import a styled font here
+  background: white;
+  color: Green;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  align-items: center;
+  text-align: center;
+}
+
+h2 {
+  align-items: center;
+  text-align: center;
+}
+
+#sign-up-user-form {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: white;
+  color: green;
+}
+
+#sign-in-user-form {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: white;
+  color: green;
+}
+
+#sign-up-user, #sign-up-password, #sign-up-password_confirmation {
+  text-align: center;
+  background: lightgrey;
+}
+
+#sign-in-user, #sign-in-password {
+  text-align: center;
+  background: lightgrey;
+}
+
+#change-password-user-old, #change-password-user-old {
+  text-align: center;
+  background: lightgrey;
+}
+// .type {
+//   text-align: center;
+//   background: lightgrey;
+// }
