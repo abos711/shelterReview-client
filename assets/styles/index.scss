@@ -18,36 +18,43 @@ h2 {
   text-align: center;
 }
 
-#sign-up-user-form {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.box {
+  border: 5px;
+  border-color: green;
   background: white;
-  color: green;
+  color: black;
 }
 
-#sign-in-user-form {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: white;
-  color: green;
-}
-
-#sign-up-user, #sign-up-password, #sign-up-password_confirmation {
-  text-align: center;
-  background: lightgrey;
-}
-
-#sign-in-user, #sign-in-password {
-  text-align: center;
-  background: lightgrey;
-}
-
-#change-password-user-old, #change-password-user-old {
-  text-align: center;
-  background: lightgrey;
-}
+// #sign-up-user-form {
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+//   background: white;
+//   color: green;
+// }
+//
+// #sign-in-user-form {
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+//   background: white;
+//   color: green;
+// }
+//
+// #sign-up-user, #sign-up-password, #sign-up-password_confirmation {
+//   text-align: center;
+//   background: lightgrey;
+// }
+//
+// #sign-in-user, #sign-in-password {
+//   text-align: center;
+//   background: lightgrey;
+// }
+//
+// #change-password-user-old, #change-password-user-old {
+//   text-align: center;
+//   background: lightgrey;
+// }
 // .type {
 //   text-align: center;
 //   background: lightgrey;

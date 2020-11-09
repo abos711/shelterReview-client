@@ -14,48 +14,112 @@
     <body>
       <h1>Shelter Review</h1>
       <p id="message"></p>
-            <section>
-              <form id="sign-up-user-form">
-                <fieldset>
-                  <legend>Sign Up</legend>
-                  <label for="sign-up-user"></label>
-                  <input id="sign-up-user" type="email" name="credentials[email]" placeholder="{User Email}">
-                  <label for="sign-up-password"></label>
-                  <input id="sign-up-password" type="password" name="credentials[password]" placeholder="{Password}">
-                  <label for="sign-up-password_confirmation"></label>
-                  <input id="sign-up-password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="{Confirm Password}">
-                  <input type="submit" value="Sign Up">
-                </fieldset>
-              </form>
-              <section>
-              <form id="sign-in-user-form">
-                <fieldset>
-                  <legend>Sign In</legend>
-                  <label for="sign-in-user"></label>
-                  <input id="sign-in-user" type="email" name="credentials[email]" placeholder="{User Email}">
-                  <label for="sign-in-password"></label>
-                  <input id="sign-in-password" type="password" name="credentials[password]" placeholder="{Password}">
-                  <input type="submit" value="Sign In">
-                </fieldset>
-              </form>
+      <!-- <section>
+        <button id ='new-user-button' type="button">{New to shelterReview - Sign-Up}</button>
       </section>
-      <br>
       <section>
-        <form id="change-password-user-form">
+        <button id ='returning-user-button' type="button">{Returning - Sign-In}</button>
+      </section> -->
+
+    <!-- <form id="examples">
+    <section class="container">
+      <div class="row board h-100">
+
+        <div data-box-index="0" class="col-6 box"></div>
+        <div data-box-index="1" class="col-6 box"></div>
+        <div data-box-index="2" class="col-6 box"></div>
+        <div data-box-index="3" class="col-6 box"></div>
+
+      </div>
+    </form> -->
+
+  <!-- sign up forms -->
+    <section>
+      <form id="sign-up-user-form">
+        <fieldset>
+          <legend>Sign Up</legend>
+          <label for="sign-up-user"></label>
+          <input id="sign-up-user" type="email" name="credentials[email]" placeholder="{User Email}">
+          <label for="sign-up-password"></label>
+          <input id="sign-up-password" type="password" name="credentials[password]" placeholder="{Password}">
+          <label for="sign-up-password_confirmation"></label>
+          <input id="sign-up-password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="{Confirm Password}">
+          <input type="submit" value="Sign Up">
+        </fieldset>
+      </form>
+    </section>
+    <!-- sign in forms -->
+    <section>
+      <form id="sign-in-user-form">
           <fieldset>
-            <legend></legend>
-  <!-- <input id="sign-in-user" type="email" name="credentials[email]" placeholder="Email"> -->
-            <input type="password" name="passwords[old]" placeholder="{Old Password}">
-            <input type="password" name="passwords[new]" placeholder="{New Password}">
-            <input type="submit" value="Change Password">
-          </fieldset>
+          <legend>Sign In</legend>
+          <label for="sign-in-user"></label>
+          <input id="sign-in-user" type="email" name="credentials[email]" placeholder="{User Email}">
+          <label for="sign-in-password"></label>
+          <input id="sign-in-password" type="password" name="credentials[password]" placeholder="{Password}">
+          <input type="submit" value="Sign In">
+        </fieldset>
+      </form>
+    </section>
+    <br>
+    <!-- change password form -->
+    <section>
+      <form id="change-password-user-form">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" placeholder="{Old Password}">
+          <input type="password" name="passwords[new]" placeholder="{New Password}">
+          <input type="submit" value="Change Password">
+        </fieldset>
+      </form>
+    </section>
+    <!-- SIGN OUT AT VERY END -->
+    <br>
+    <!-- LISTING HTML STARTS HERE -->
+    <!-- Index button -->
+    <!-- Might have to change this to form to bring in token -->
+    <button id="listing-index-button" type="button">Listing Reviews</button>
+    <!-- Insert HTML for response -->
+    <form id="review-display">
+        <h3></h3>
+        <p></p>
+        <!-- <p></p> for identification number -->
+    </form>
+
+
+    <form id="listing-show-form">
+      <legend>Find a Review</legend>
+      <input name="listing[id]" type="text" placeholder="Search {listing[id]}">
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Create new review form -->
+    <!-- Maybe start new page -->
+    <form id="listing-create-form">
+      <legend>Write a review!</legend>
+      <input name="listing[address]" type="text" placeholder="ex: 123 Main st">
+      <input name="listing[review]" type="text" placeholder="write review here">
+      <button type="submit">Create Review</button>
+    </form>
+
+    <form id="listing-update-form">
+      <legend>Update Reviews</legend>
+      <input name="listing[id]" type="text" placeholder="listing id here">
+      <input name="listing[review]" type="text" placeholder="update review here">
+      <button type="submit">Update Review</button>
+    </form>
+
+    <form id="listing-delete-form">
+      <legend>Delete your Review</legend>
+      <input name="listing[id]" type="text" placeholder="listing id here">
+      <button type="submit">Delete Review</button>
+    </form>
+
+
+    <section>
+        <form id='sign-out-user-form'>
+          <input type='submit' value='Sign out'>
         </form>
-      </section>
-      <br>
-      <section>
-          <form id='sign-out-user-form'>
-            <input type='submit' value='Sign out'>
-          </form>
-      </section>
-    </body>
+    </section>
+  </body>
 </html>
