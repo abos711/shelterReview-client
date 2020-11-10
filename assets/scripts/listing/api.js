@@ -26,46 +26,43 @@ const getReviews = function () {
   })
 }
 
-// const showReview = function (review) {
-//   return $.ajax({
-//     // add listing id here
-//     url: config.apiUrl + '/listings/:id',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     data: review
-//   })
-// }
-//
-// const updateReview = function (review) {
-//   return $.ajax({
-//     // add listing id here - might run into an error here
-//     url: config.apiUrl + '/listings/:id',
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     data: review
-//   })
-// }
-//
-// const deleteReview = function (review) {
-//   return $.ajax({
-//     // add listing id here
-//     url: config.apiUrl + '/listings/:id',
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     data: review
-//   })
-// }
+const showReview = function (id) {
+  return $.ajax({
+    // add listing id here
+    url: config.apiUrl + '/listings/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const updateReview = function (data) {
+  // const review = data.event
+  return $.ajax({
+    url: config.apiUrl + '/listings/' + data.listing.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
+
+const deleteReview = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/listings/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   createReview,
-  getReviews
-  // showReview,
-  // updateReview,
-  // deleteReview
+  getReviews,
+  showReview,
+  updateReview,
+  deleteReview
 }

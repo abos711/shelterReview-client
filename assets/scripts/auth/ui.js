@@ -49,6 +49,14 @@ const signOutSuccess = () => {
   $('#sign-in-user-form').show()
   $('#change-password-user-form').hide()
   $('#sign-out-user-form').hide()
+  $('#listing-create-form').hide()
+  $('#listing-index-button').hide()
+  $('#listing-show-form').hide()
+  $('#listing-update-form').hide()
+  $('#listing-delete-form').hide()
+  $('#listing-display').hide()
+  // #listing-display.text ''
+  $('forms').trigger('reset')
 
   store.user = null
 }

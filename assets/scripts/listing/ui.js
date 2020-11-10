@@ -3,9 +3,7 @@ const store = require('./../store')
 const createReviewSuccess = (response) => {
   store.listing = response.listing
   $('#message').text('Success! You have created a review!')
-  // trigger reset form
-  // $('form').trigger('reset')
-  $('#listing-create-form')
+  $('form').trigger('reset')
 }
 
 const createReviewFailure = () => {
@@ -13,79 +11,87 @@ const createReviewFailure = () => {
 }
 
 const getReviewsSuccess = (response) => {
-  store.reviews = response.reviews
-  // set variable
-  $('review-display').html('')
-  $('#message').text('Reviews: ')
+  store.listings = response.listings
 
-  console.log(store.reviews)
-  // undefined
+  console.log(store.listings)
 
-//   store.reviews.forEach((currentReview) => {
-//     if (store.user._id !== currentReview.owner) {
-//       const responseHTML = (`
-//         <h3>Address: ${currentReview.address}</h3>;
-//         <p>Review: ${currentReview.review}</p>
-//        <p> id number needs to be present to copy and paste for show
-//       `)
-//     }
-// })
+  $('listing-display').html('')
+  $('#listing-display').show('')
+  $('#message').text('Success, See Reviews Below!')
+  $('#change-password-user-form').hide()
+  // $('#listing-index-button').hide()
+  $('#listing-delete-form').show()
+
+  store.listings.forEach((listing) => {
+    if (store.user._id !== listing.owner) {
+      const listingHTML = (`
+        <h3>Address: ${listing.address}</h3>
+        <p>Review: ${listing.review}</p>
+        <p>ID: ${listing._id}</p>
+
+        <br>
+        `)
+      $('#listing-display').append(listingHTML)
+    }
+  })
 }
 
 const getReviewsFailure = () => {
   $('#message').text('Unsuccessful review search, try again')
 }
 
-// const showReviewSuccess = (response) => {
-//   store.review = response.review
-//   // set variable
-//   $('review-display').html('')
-//   $('#message').text('Reviews: ')
-//
-// // not sure if this is correct (store.review)
-//   console.log(store.review)
-//   // undefined
-//
-// //   store.review((currentReview) => {
-// //     if (store.user._id !== currentReview.owner) {
-// //       const responseHTML = (`
-// //         <h3>Address: ${currentReview.address}</h3>;
-// //         <p>Review: ${currentReview.review}</p>
-// //        <p> id number needs to be present to copy and paste for show
-// //       `)
-// //     }
-// // })
-// }
-//
-// const showReviewFailure = () => {
-//   $('#message').text('Unsuccessful review search, try again')
-// }
-//
-// const updateReviewSuccess = (response) => {
-//   $('#message').text('Success, Review updated')
-// }
-//
-// const updateReviewFailure = () => {
-//   $('#message').text('Unable to update review, try again')
-// }
-//
-// const deleteReviewSuccess = (response) => {
-//   $('#message').text('Success, Review deleted')
-// }
-//
-// const deleteReviewFailure = () => {
-//   $('#message').text('Unable to update review, try again')
-// }
+const showReviewSuccess = (response) => {
+  store.listing = response.listing
+  // set variable
+  $('#listing-display').html('')
+  $('#message').text('Review: ')
+
+  console.log(store.listings)
+
+  // restricting show to only user
+  // if (store.user._id !== listing.owner) {
+  const listingHTML = (`
+        <h3>Address: ${response.listing.address}</h3>
+        <p>Review: ${response.listing.review}</p>
+        <p>Listing ID: ${response.listing._id}</p>
+        <p>UserID: ${response.listing.owner}</p>
+        <br>
+        `)
+  $('#listing-display').html(listingHTML)
+  $('form').trigger('reset')
+  $('#listing-update-form').show()
+}
+
+const showReviewFailure = () => {
+  $('#message').text('Unsuccessful review search, try again')
+}
+
+const updateReviewSuccess = (response) => {
+  $('#message').text('Success, Review updated')
+}
+
+const updateReviewFailure = () => {
+  $('#message').text('Unable to update review, try again')
+}
+
+const deleteReviewSuccess = (response) => {
+  $('#message').text('Success, Review deleted')
+  $('form').trigger('reset')
+}
+
+const deleteReviewFailure = () => {
+  $('#message').text('Unable to delete review, try again')
+}
 
 module.exports = {
   createReviewSuccess,
   createReviewFailure,
   getReviewsSuccess,
-  getReviewsFailure
-  // showReviewSuccess,
-  // showReviewFailure,
-  // updateReviewSuccess,
-  // updateReviewFailure,
-  // deleteReviewSuccess,
-  // deleteReviewFailure
+  getReviewsFailure,
+  showReviewSuccess,
+  showReviewFailure,
+  updateReviewSuccess,
+  updateReviewFailure,
+  deleteReviewSuccess,
+  deleteReviewFailure
 }

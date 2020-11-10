@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>ShelterReview</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -80,16 +80,11 @@
     <!-- Might have to change this to form to bring in token -->
     <button id="listing-index-button" type="button">Listing Reviews</button>
     <!-- Insert HTML for response -->
-    <form id="review-display">
-        <h3></h3>
-        <p></p>
-        <!-- <p></p> for identification number -->
-    </form>
-
+    <div id="listing-display"></div>
 
     <form id="listing-show-form">
       <legend>Find a Review</legend>
-      <input name="listing[id]" type="text" placeholder="Search {listing[id]}">
+      <input name="listing[id]" required type="text" placeholder="Search {listing[id]}">
       <button type="submit">Search</button>
     </form>
 
@@ -104,14 +99,14 @@
 
     <form id="listing-update-form">
       <legend>Update Reviews</legend>
-      <input name="listing[id]" type="text" placeholder="listing id here">
+      <input name="listing[id]" required type="text" placeholder="listing id here">
       <input name="listing[review]" type="text" placeholder="update review here">
       <button type="submit">Update Review</button>
     </form>
 
     <form id="listing-delete-form">
       <legend>Delete your Review</legend>
-      <input name="listing[id]" type="text" placeholder="listing id here">
+      <input name="listing[id]" required type="text" placeholder="listing id here">
       <button type="submit">Delete Review</button>
     </form>
 

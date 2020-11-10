@@ -26,55 +26,57 @@ const onGetReviews = (event) => {
 
   api.getReviews()
     .then(ui.getReviewsSuccess)
-    .then(ui.getReviewsFailure)
+    .catch(ui.getReviewsFailure)
 }
 
-// const onShowReview = function (event) {
-//   event.preventDefault()
-//
-//   console.log('show a review')
-//
-//   // const form = event.target
-//   //
-//   // const data = getFormFields(form)
-//   //
-//   // api.showReview(data)
-//   //   .then(ui.showReviewSuccess)
-//   //   .catch(ui.showReviewFailure)
-// }
-//
-// const onUpdateReview = function (event) {
-//   event.preventDefault()
-//
-//   console.log('update a review')
-//
-//   // const form = event.target
-//   //
-//   // const data = getFormFields(form)
-//   //
-//   // api.updateReview(data)
-//   //   .then(ui.updateReviewSuccess)
-//   //   .catch(ui.updateReviewFailure)
-// }
-//
-// const onDeleteReview = function (event) {
-//   event.preventDefault()
-//
-//   console.log('delete a review')
-//
-//   // const form = event.target
-//   //
-//   // const data = getFormFields(form)
-//   //
-//   // api.deleteReview(data)
-//   //   .then(ui.deleteReviewSuccess)
-//   //   .catch(ui.deleteReviewFailure)
-// }
+const onShowReview = function (event) {
+  event.preventDefault()
+
+  console.log('show a review')
+  console.log(store)
+
+  const form = event.target
+
+  const review = getFormFields(form)
+
+  api.showReview(review.listing.id)
+    .then(ui.showReviewSuccess)
+    .catch(ui.showReviewFailure)
+}
+
+const onUpdateReview = function (event) {
+  event.preventDefault()
+
+  console.log('update a review')
+
+  const form = event.target
+
+  const data = getFormFields(form)
+
+  api.updateReview(data)
+    .then(ui.updateReviewSuccess)
+    .catch(ui.updateReviewFailure)
+}
+
+const onDeleteReview = function (event) {
+  event.preventDefault()
+
+  console.log('delete a review')
+  console.log(store)
+
+  const form = event.target
+
+  const review = getFormFields(form)
+
+  api.deleteReview(review.listing.id)
+    .then(ui.deleteReviewSuccess)
+    .catch(ui.deleteReviewFailure)
+}
 
 module.exports = {
   onCreateReview,
-  onGetReviews
-  // onShowReview,
-  // onUpdateReview,
-  // onDeleteReview
+  onGetReviews,
+  onShowReview,
+  onUpdateReview,
+  onDeleteReview
 }
