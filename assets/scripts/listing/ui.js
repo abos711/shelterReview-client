@@ -4,6 +4,17 @@ const createReviewSuccess = (response) => {
   store.listing = response.listing
   $('#message').text('Success! You have created a review!')
   $('form').trigger('reset')
+
+  const listingHTML = (`
+        <h3>Address: ${response.listing.address}</h3>
+        <p>Review: ${response.listing.review}</p>
+        <p>Listing ID: ${response.listing._id}</p>
+        <br>
+        `)
+  $('#listing-display').append(listingHTML)
+  $('form').trigger('reset')
+  $('#listing-update-form').show()
+  $('#listing-show-form').show()
 }
 
 const createReviewFailure = () => {
@@ -13,13 +24,13 @@ const createReviewFailure = () => {
 const getReviewsSuccess = (response) => {
   store.listings = response.listings
 
-  console.log(store.listings)
+  // console.log(store.listings)
 
   $('listing-display').html('')
   $('#listing-display').show('')
-  $('#message').text('Success, See Reviews Below!')
+  $('#message').text('Success, See Reviews!')
   $('#change-password-user-form').hide()
-  // $('#listing-index-button').hide()
+  $('#listing-show-form').show()
   $('#listing-delete-form').show()
 
   store.listings.forEach((listing) => {
@@ -27,7 +38,7 @@ const getReviewsSuccess = (response) => {
       const listingHTML = (`
         <h3>Address: ${listing.address}</h3>
         <p>Review: ${listing.review}</p>
-        <p>ID: ${listing._id}</p>
+        <p>Listing ID: ${listing._id}</p>
 
         <br>
         `)
@@ -46,15 +57,12 @@ const showReviewSuccess = (response) => {
   $('#listing-display').html('')
   $('#message').text('Review: ')
 
-  console.log(store.listings)
+  // console.log(store.listings)
 
-  // restricting show to only user
-  // if (store.user._id !== listing.owner) {
-  const listingHTML = (`
+const listingHTML = (`
         <h3>Address: ${response.listing.address}</h3>
         <p>Review: ${response.listing.review}</p>
         <p>Listing ID: ${response.listing._id}</p>
-        <p>UserID: ${response.listing.owner}</p>
         <br>
         `)
   $('#listing-display').html(listingHTML)
@@ -68,6 +76,7 @@ const showReviewFailure = () => {
 
 const updateReviewSuccess = (response) => {
   $('#message').text('Success, Review updated')
+  $('form').trigger('reset')
 }
 
 const updateReviewFailure = () => {
@@ -77,6 +86,7 @@ const updateReviewFailure = () => {
 const deleteReviewSuccess = (response) => {
   $('#message').text('Success, Review deleted')
   $('form').trigger('reset')
+  $('#listing-display').html('')
 }
 
 const deleteReviewFailure = () => {

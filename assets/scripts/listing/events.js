@@ -10,9 +10,9 @@ const store = require('./../store')
 
 const onCreateReview = (event) => {
   event.preventDefault()
-  console.log('review created')
+  // console.log('review created')
   const form = event.target
-  console.log(event)
+  // console.log(event)
   const review = getFormFields(form)
 
   api.createReview(review)
@@ -22,7 +22,7 @@ const onCreateReview = (event) => {
 
 const onGetReviews = (event) => {
   event.preventDefault()
-  console.log(event)
+  // console.log(event)
 
   api.getReviews()
     .then(ui.getReviewsSuccess)
@@ -32,8 +32,8 @@ const onGetReviews = (event) => {
 const onShowReview = function (event) {
   event.preventDefault()
 
-  console.log('show a review')
-  console.log(store)
+  // console.log('show a review')
+  // console.log(store)
 
   const form = event.target
 
@@ -47,7 +47,7 @@ const onShowReview = function (event) {
 const onUpdateReview = function (event) {
   event.preventDefault()
 
-  console.log('update a review')
+  // console.log('update a review')
 
   const form = event.target
 
@@ -61,8 +61,8 @@ const onUpdateReview = function (event) {
 const onDeleteReview = function (event) {
   event.preventDefault()
 
-  console.log('delete a review')
-  console.log(store)
+  // console.log('delete a review')
+  // console.log(store)
 
   const form = event.target
 

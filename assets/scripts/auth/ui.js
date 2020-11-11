@@ -23,7 +23,6 @@ const signInSuccess = (response) => {
   $('#change-password-user-form').show()
   $('#listing-create-form').show()
   $('#listing-index-button').show()
-  $('#listing-show-form').show()
   $('#sign-up-user-form').hide()
   $('#sign-in-user-form').hide()
   $('#sign-out-user-form').show()
@@ -43,7 +42,7 @@ const changePasswordFailure = () => {
   $('#message').text('Unsuccessful password change, try again')
 }
 const signOutSuccess = () => {
-  // // console.log('youre signed out')
+  // // // console.log('youre signed out')
   $('#message').text('Success! Come back soon! ' + store.user.email)
   $('#sign-up-user-form').show()
   $('#sign-in-user-form').show()
