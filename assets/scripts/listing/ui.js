@@ -19,6 +19,7 @@ const createReviewSuccess = (response) => {
 
 const createReviewFailure = () => {
   $('#message').text('Unsuccessful listing review, try again')
+  $('form').trigger('reset')
 }
 
 const getReviewsSuccess = (response) => {
@@ -72,6 +73,7 @@ const listingHTML = (`
 
 const showReviewFailure = () => {
   $('#message').text('Unsuccessful review search, try again')
+  $('form').trigger('reset')
 }
 
 const updateReviewSuccess = (response) => {
@@ -81,6 +83,7 @@ const updateReviewSuccess = (response) => {
 
 const updateReviewFailure = () => {
   $('#message').text('Unable to update review, try again')
+  $('form').trigger('reset')
 }
 
 const deleteReviewSuccess = (response) => {
