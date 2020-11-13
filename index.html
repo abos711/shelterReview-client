@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>ShelterReview</title>
+      <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Tenant Review</h1>
+      <p> An interactive messaging board for prospective tenants and tenants alike to provide a better understanding of living conditions before signing on the dotted line.</p>
+      <p id="message"></p>
+
+  <!-- sign up forms -->
+    <section>
+      <form id="sign-up-user-form">
+        <fieldset>
+          <legend>Sign Up</legend>
+          <label for="sign-up-user"></label>
+          <input id="sign-up-user" type="email" name="credentials[email]" placeholder="{User Email}">
+          <label for="sign-up-password"></label>
+          <input id="sign-up-password" type="password" name="credentials[password]" placeholder="{Password}">
+          <label for="sign-up-password_confirmation"></label>
+          <input id="sign-up-password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="{Confirm Password}">
+          <button type="submit" >Sign Up</button>
+        </fieldset>
+      </form>
+    </section>
+    <!-- sign in forms -->
+    <section>
+      <form id="sign-in-user-form">
+          <fieldset>
+          <legend>Sign In</legend>
+          <label for="sign-in-user"></label>
+          <input id="sign-in-user" type="email" name="credentials[email]" placeholder="{User Email}">
+          <label for="sign-in-password"></label>
+          <input id="sign-in-password" type="password" name="credentials[password]" placeholder="{Password}">
+          <button type="submit">Sign In</button>
+        </fieldset>
+      </form>
+    </section>
+    <br>
+    <!-- change password form -->
+    <section>
+      <form id="change-password-user-form">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" placeholder="{Old Password}">
+          <input type="password" name="passwords[new]" placeholder="{New Password}">
+          <button type="submit">Change Password</button>
+        </fieldset>
+      </form>
+    </section>
+    <!-- SIGN OUT AT VERY END -->
+    <br>
+    <!-- LISTING HTML STARTS HERE -->
+
+    <form id="listing-create-form">
+      <legend>Write a review!</legend>
+      <input name="listing[address]" type="text" placeholder="ex: 123 Main st">
+      <input name="listing[review]" type="text" placeholder="write review here">
+      <button type="submit">Create Review</button>
+    </form>
+    <br>
+    <!-- Index button -->
+    <!-- Might have to change this to form to bring in token -->
+    <button id="listing-index-button" type="button">Listing Reviews</button>
+    <br>
+    <!-- Insert HTML for response -->
+    <div id="listing-display"></div>
+
+    <!-- Create new review form -->
+    <!-- Maybe start new page -->
+
+    <form id="listing-show-form">
+      <legend>Find a Review</legend>
+      <input name="listing[id]" required type="text" placeholder="Search {listing[id]}">
+      <button type="submit">Search</button>
+    </form>
+    <br>
+
+    <form id="listing-update-form">
+      <legend>Update Reviews</legend>
+      <input name="listing[id]" required type="text" placeholder="listing id here">
+      <input name="listing[review]" type="text" placeholder="update review here">
+      <button type="submit">Update Review</button>
+    </form>
+    <br>
+
+    <form id="listing-delete-form">
+      <legend>Delete your Review</legend>
+      <input name="listing[id]" required type="text" placeholder="listing id here">
+      <button type="submit">Delete Review</button>
+    </form>
+    <br>
+
+    <section>
+        <form id="sign-out-user-form">
+          <button type='submit'>Sign out</button>
+        </form>
+    </section>
+  </body>
+</html>
